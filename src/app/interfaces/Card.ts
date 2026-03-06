@@ -5,13 +5,16 @@ export interface PokemonCard {
   subtypes: string[]
   level: string
   hp: string
+  rules?: string []
   types: string[]
-  evolvesFrom: string
-  abilities: Ability[]
+  evolvesTo?: string[]
+  evolvesFrom?: string
+  abilities?: Ability[]
   attacks: Attack[]
-  weaknesses: Weakness[]
-  retreatCost: string[]
-  convertedRetreatCost: number
+  weaknesses?: Weakness[]
+  resistances?: Resistance[]
+  retreatCost?: string[]
+  convertedRetreatCost?: number 
   number: string
   artist: string
   rarity: string
@@ -19,6 +22,11 @@ export interface PokemonCard {
   nationalPokedexNumbers: number[]
   legalities: Legalities
   images: Images
+}
+
+export interface Resistance {
+  type: string,
+  value: string
 }
 
 export interface Ability {
@@ -42,6 +50,7 @@ export interface Weakness {
 
 export interface Legalities {
   unlimited: string
+  expanded?:string
 }
 
 export interface Images {
